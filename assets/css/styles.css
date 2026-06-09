@@ -59,7 +59,9 @@ a {
   align-items: center;
   text-decoration: none;
   font-weight: 800;
+  font-size: 1.3rem;
   letter-spacing: .02em;
+  color: var(--brand);
 }
 
 .brand-mark {
