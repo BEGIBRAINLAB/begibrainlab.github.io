@@ -11,15 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && menu) {
     menuToggle.addEventListener("click", () => {
       const isOpen = menu.classList.toggle("is-open");
-      menuToggle.classList.toggle("is-open", isOpen);
+
       menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menu.classList.remove("is-open");
-        menuToggle.classList.remove("is-open");
         menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
       });
     });
   }
