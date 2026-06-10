@@ -522,3 +522,9 @@ section {
     margin: 16px 0 18px !important;
   }
 }
+
+.person-card .tag {
+  white-space: normal;
+  line-height: 1.35;
+  max-width: 100%;
+}
