@@ -576,12 +576,23 @@ section {
 .research-card-image {
   display: block;
   width: 100%;
-  height: 145px;
+  max-width: 100%;
+  height: 130px;
+  max-height: 130px;
   object-fit: contain;
   object-position: center;
-  margin: 16px 0 18px;
-  padding: 10px;
-  border-radius: 18px;
+  margin: 14px 0 16px;
+  padding: 8px;
+  border-radius: 16px;
   background: #ffffff;
   border: 1px solid var(--line);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.research-card {
+  overflow: hidden;
+}
+
+.research-card img {
+  max-width: 100%;
 }
