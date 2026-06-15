@@ -32,6 +32,73 @@ document.addEventListener("DOMContentLoaded", () => {
   /*
    * Hero carousel
    */
+ /*
+   * Highlight active navigation section while scrolling
+   */
+  const sectionLinks = Array.from(document.querySelectorAll(".menu a[href^='#']"));
+
+  const sections = sectionLinks
+    .map((link) => {
+      const id = link.getAttribute("href");
+      const section = document.querySelector(id);
+
+      if (!section) {
+        return null;
+      }
+
+      return {
+        link,
+        section
+      };
+    })
+    .filter(Boolean);
+
+  const clearActiveSections = () => {
+    sectionLinks.forEach((link) => {
+      link.classList.remove("is-active-section");
+    });
+  };
+
+  const setActiveSection = (id) => {
+    clearActiveSections();
+
+    const activeLink = document.querySelector(`.menu a[href="${id}"]`);
+
+    if (activeLink) {
+      activeLink.classList.add("is-active-section");
+    }
+  };
+
+  const updateActiveSection = () => {
+    const offset = 160;
+    let currentSectionId = "";
+
+    sections.forEach(({ section }) => {
+      const sectionTop = section.offsetTop - offset;
+
+      if (window.scrollY >= sectionTop) {
+        currentSectionId = `#${section.id}`;
+      }
+    });
+
+    if (currentSectionId) {
+      setActiveSection(currentSectionId);
+    } else {
+      clearActiveSections();
+    }
+  };
+
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  window.addEventListener("load", updateActiveSection);
+
+  sectionLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveSection(link.getAttribute("href"));
+    });
+  });
+
+  updateActiveSection();
+
   const carousel = document.querySelector(".hero-carousel");
 
   if (!carousel) {
