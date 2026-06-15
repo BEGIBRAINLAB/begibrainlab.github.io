@@ -442,35 +442,28 @@ section {
   text-decoration: underline !important;
 }
 
-.person-card .orcid-link img,
-.person-card .orcid-link img.orcid-icon {
+.person-card .orcid-link .orcid-dot {
   width: 22px !important;
   height: 22px !important;
   min-width: 22px !important;
   max-width: 22px !important;
   min-height: 22px !important;
   max-height: 22px !important;
-  display: inline-block !important;
-  object-fit: contain !important;
-  flex: 0 0 22px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.person-card .orcid-icon-wrap {
-  width: 22px !important;
-  height: 22px !important;
-  min-width: 22px !important;
-  max-width: 22px !important;
-  min-height: 22px !important;
-  max-height: 22px !important;
+  border-radius: 50% !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: hidden !important;
+  background: #a6ce39 !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
   flex: 0 0 22px !important;
+  overflow: hidden !important;
+}
+
+.person-card .orcid-link .orcid-dot::before {
+  content: "iD" !important;
 }
 
 /* Projects */
