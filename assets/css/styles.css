@@ -681,4 +681,17 @@ section {
   }
 }
 
-Enviado desde Outlook para Android
+/* Extra separation between hero and People */
+
+#people {
+  padding-top: 115px;
+}
+
+@media (max-width: 850px) {
+  #people {
+    padding-top: 90px;
+  }
+}
+
+
+
