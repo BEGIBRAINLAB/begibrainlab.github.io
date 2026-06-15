@@ -245,7 +245,7 @@ section[id] {
   background: var(--soft);
 }
 
-/* Hero research map */
+/* Hero research map - desktop */
 
 .hero-research-map {
   display: grid;
@@ -280,7 +280,7 @@ section[id] {
   letter-spacing: -0.04em;
 }
 
-/* Desktop/mobile split for hero research icons */
+/* Hero research map - mobile placeholder */
 
 .hero-research-map-mobile {
   display: none;
@@ -291,7 +291,7 @@ section[id] {
 }
 
 .hero-actions-mobile {
-  display: none;
+  display: none !important;
 }
 
 /* Sections */
@@ -626,9 +626,11 @@ section {
   }
 }
 
+/* Mobile hero */
+
 @media (max-width: 850px) {
   .hero {
-    padding: 18px 0 76px;
+    padding: 16px 0 76px;
   }
 
   .hero-grid {
@@ -642,7 +644,7 @@ section {
 
   .hero h1 {
     font-size: clamp(2.45rem, 14vw, 3.7rem);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .hero-research-map-desktop {
@@ -651,33 +653,24 @@ section {
 
   .hero-research-map-mobile {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
-    max-width: 100%;
-    margin: 12px auto 26px;
+    width: 100%;
+    max-width: 360px;
+    margin: 8px auto 24px;
   }
 
-  .hero-research-map-mobile .hero-research-item {
+  .hero-research-map-mobile .hero-research-icon {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;
-    text-align: center;
   }
 
-  .hero-research-map-mobile .hero-research-item img {
-    width: 68px;
-    height: 68px;
+  .hero-research-map-mobile .hero-research-icon img {
+    width: 66px;
+    height: 66px;
     object-fit: contain;
-  }
-
-  .hero-research-map-mobile .hero-research-item h3 {
-    display: none;
-  }
-
-  .hero-research-map-mobile .hero-research-item::after {
-    content: none !important;
+    display: block;
   }
 
   .lead {
@@ -720,17 +713,18 @@ section {
 
 @media (max-width: 420px) {
   .hero {
-    padding-top: 12px;
+    padding-top: 10px;
   }
 
   .hero-research-map-mobile {
+    max-width: 340px;
     gap: 6px;
-    margin: 10px auto 24px;
+    margin: 6px auto 22px;
   }
 
-  .hero-research-map-mobile .hero-research-item img {
-    width: 62px;
-    height: 62px;
+  .hero-research-map-mobile .hero-research-icon img {
+    width: 60px;
+    height: 60px;
   }
 
   .hero-actions-desktop {
@@ -744,9 +738,9 @@ section {
 }
 
 @media (max-width: 370px) {
-  .hero-research-map-mobile .hero-research-item img {
-    width: 56px;
-    height: 56px;
+  .hero-research-map-mobile .hero-research-icon img {
+    width: 54px;
+    height: 54px;
   }
 
   .hero-actions-desktop .btn {
@@ -754,3 +748,5 @@ section {
     font-size: .86rem;
   }
 }
+
+Enviado desde Outlook para Android
